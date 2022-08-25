@@ -10,6 +10,7 @@ public class DaysOfTheWeek {
 	getDaysInMonth(1, 2222);
     }
 
+/* prints word for numbers */
     public static void printNumberInWord(int number)
     {
         String[] numbers= {"ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
@@ -24,6 +25,7 @@ public class DaysOfTheWeek {
         }
     }
 
+/*prints days of the week */
 
 	public static void printDayOftheWeek(int day)
 	{
@@ -40,9 +42,13 @@ public class DaysOfTheWeek {
     	}
 
 
-//public class NumberOfDaysInMonth {
-    // A year is a leap year if it is divisible by 4 but not by 100, or it is divisible by 400.
-    public static boolean isLeapYear(int year)
+
+
+
+
+/* gets days in month, leap years included */
+
+public static boolean isLeapYear(int year)
     {
         if (year >= 1 && year <= 9999)
         {
@@ -61,23 +67,22 @@ public class DaysOfTheWeek {
             return -1;
         if (year < 1 || year > 9999)
             return -1;
-
+         
+	int days = 0;
         switch(month)
         {
-  //          case JANUARY: case MARCH : case MAY: case JULY: case AUGUST: case OCTOBER: case DECEMBER:
-    
             case 1: case 3 : case 5: case 7: case 8: case 10: case 12:
-            	System.out.println("31 days");
+                days = 31;
                 break;
             case 4: case 6: case 9: case 11:
-                System.out.println("30 days");
+                days = 30;
                 break;
             case 2:
             {
                 if (isLeapYear(year) == true)
-                    System.out.println("29 days");
-                else
-                    System.out.println("28 days");
+                    days = 29;
+                if (isLeapYear(year) == false)
+                    days = 28;
                 break;
             }
             default:
@@ -85,8 +90,8 @@ public class DaysOfTheWeek {
                 break;
             
         }
-	return 0;
-        
+        System.out.println(days + " days");
+	return days;
     }
     
 //}
